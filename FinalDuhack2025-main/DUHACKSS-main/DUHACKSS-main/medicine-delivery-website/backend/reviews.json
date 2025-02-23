@@ -1,0 +1,4 @@
+[
+    { "medicine": "Paracetamol", "rating": 4.5, "review": "Great for headaches!" },
+    { "medicine": "Aspirin", "rating": 4.0, "review": "Effective for pain relief." }
+  ]

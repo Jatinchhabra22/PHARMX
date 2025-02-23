@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Paracetamol",
+      "price": 20,
+      "category": "Pain Relief",
+      "image": "assets/paracetamol.jpg"
+    },
+    {
+      "name": "Aspirin",
+      "price": 30,
+      "category": "Pain Relief",
+      "image": "assets/aspirin.jpg"
+    },
+    {
+      "name": "Ibuprofen",
+      "price": 50,
+      "category": "Pain Relief",
+      "image": "assets/ibuprofen.jpg"
+    },
+    {
+      "name": "Amoxicillin",
+      "price": 100,
+      "category": "Antibiotic",
+      "image": "assets/amoxicillin.jpg"
+    },
+    {
+      "name": "Cetirizine",
+      "price": 40,
+      "category": "Allergy",
+      "image": "assets/cetirizine.jpg"
+    }
+  ]

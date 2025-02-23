@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHARMX - Fast Medicine Delivery</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="/DUHACKSS-main/medicine-delivery-website/logo-removebg-preview.png" alt="FastMed Logo">
+      <h1>PHARMX</h1>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#medicine-db">Order Medicines</a></li>
+      <li><a href="#medical-supplies">Medical Supplies</a></li>
+      <li><a href="#mental-health">Mental Health</a></li> <!-- New Link -->
+      <li><a href="#emergency-kit">Emergency Kits</a></li> <!-- New Link -->
+      <li><a href="#ai-doctor">AI Doctor</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="login-btn" onclick="openLogin()">Login</button></li>
+      <li><button id="signup-btn" onclick="openSignup()">Signup</button></li>
+      <li><button id="dashboard-btn" onclick="openDashboard()">Dashboard</button></li>
+    </ul>
+  </nav>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeSignup()">&times;</span>
+      <h2>Signup</h2>
+      <input type="text" id="signup-username" placeholder="Username">
+      <input type="password" id="signup-password" placeholder="Password">
+      <button onclick="signup()">Signup</button>
+      <p id="signup-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Dashboard Modal -->
+  <div id="dashboard-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDashboard()">&times;</span>
+      <h2>Dashboard</h2>
+      <div id="dashboard-content">
+        <h3>Order History</h3>
+        <div id="order-history"></div>
+        <h3>Saved Addresses</h3>
+        <div id="saved-addresses"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Fast Medicine Delivery at Your Doorstep</h2>
+      <p>Get your medicines delivered in under 30 minutes!</p>
+      <button onclick="scrollToServices()">Explore Services</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <i class="fas fa-pills"></i>
+        <h3>Medicine Delivery</h3>
+        <p>Fast and reliable delivery of medicines.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-stethoscope"></i>
+        <h3>AI Doctor</h3>
+        <p>Consult our AI doctor for quick health advice.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Medicine Database</h3>
+        <p>Search for medicines and their details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medicine Ordering Section -->
+  <section id="medicine-db" class="medicine-db">
+    <h2>Order Medicines</h2>
+    <input type="text" id="search-medicine" placeholder="Search for a medicine...">
+    <div class="medicine-list" id="medicine-list"></div>
+  </section>
+
+  <!-- Medical Supplies Section -->
+  <section id="medical-supplies" class="medical-supplies">
+    <h2>Medical Supplies</h2>
+    <div class="supplies-list">
+      <div class="supply-item">
+        <img src="https://imgs.search.brave.com/YbAY2-kp-5ICiJj3zpg48XxG8w8a3tTHEBKeCgFlpCI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9hdGhv/bWUubWVkbGluZS5j/b20vbWVkaWEvY2F0/YWxvZy9wcm9kdWN0/L2NhY2hlL2FjZmUy/MDU2Y2M4YjExNTBh/MzllNjRmNzFkMGQ0/ZDJlL2MvdS9jdXJh/ZC1jbGVhci1hZGhl/c2l2ZS1iYW5kYWdl/cy1wZjAwMDE4Lmpw/Zw" alt="Bandages">
+        <h3>Bandages</h3>
+        <p>High-quality adhesive bandages for wound care.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="supply-item">
+        <img src="https://imgs.search.brave.com/FEpVRVWAb4lq-IZRi5LY-IzEIcbygB5fOc3fWXCJOhA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE2/NzU1ODU2MC9waG90/by9maXJzdC1haWQt/a2l0LmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz02VTR2dlc3/YzN4QTQwX1ptbUhl/dlRqM2ZybjliT21H/MTJpbXJDUTJaaEtF/PQ" alt="First Aid Kit">
+        <h3>First Aid Kit</h3>
+        <p>Comprehensive first aid kit for emergencies.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="supply-item">
+        <img src="https://imgs.search.brave.com/UkJmhpAovRWjCGG5FCDj-ijPF-MSCxDZKhjHmQ2v2M8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzI3Lzk0LzEw/LzM2MF9GXzkyNzk0/MTA2OF9CQ1ljRmcx/OHdCU0tIdWhmZ2dS/Z1VZTFN2WWRVRTJk/cS5qcGc" alt="Thermometer">
+        <h3>Digital Thermometer</h3>
+        <p>Accurate and fast-reading digital thermometer.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="supply-item">
+        <img src="https://imgs.search.brave.com/_4uB70UFc1v8NnpIRCPXlKvtl2192SAc7JburnsZ6_I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9zZW8vRXF1/YXRlLUVhcmxvb3At/RmFjZS1NYXNrcy1X/aGl0ZS0yNS1Db3Vu/dF9lODJjYzJkOC02/ZjJiLTQzMGMtYTIw/Ni1iMmJjYzE5N2Fk/NjQuMTE5M2U0NmE1/YmEyY2I0Y2FhYmM4/ZTUwOTU3YzZhMzQu/anBlZz9vZG5IZWln/aHQ9NTgwJm9kbldp/ZHRoPTU4MCZvZG5C/Zz1GRkZGRkY" alt="Face Mask">
+        <h3>Face Masks</h3>
+        <p>Disposable face masks for protection.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mental Health Session Section -->
+  <section id="mental-health" class="mental-health">
+    <h2>Mental Health Sessions</h2>
+    <div class="session-cards">
+      <div class="session-card">
+        <i class="fas fa-headset"></i>
+        <h3>Virtual Counseling</h3>
+        <p>Book a one-on-one session with certified mental health professionals.</p>
+        <button>Book Now</button>
+      </div>
+      <div class="session-card">
+        <i class="fas fa-users"></i>
+        <h3>Group Therapy</h3>
+        <p>Join group therapy sessions for shared experiences and support.</p>
+        <button>Join Now</button>
+      </div>
+      <div class="session-card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Workshops</h3>
+        <p>Attend workshops on stress management and mindfulness.</p>
+        <button>Register Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Kit Supply Section -->
+  <section id="emergency-kit" class="emergency-kit">
+    <h2>Emergency Kits</h2>
+    <div class="kit-list">
+      <div class="kit-item">
+        <img src="/DUHACKSS-main/BEK.webp" alt="Basic Emergency Kit">
+        <h3>Basic Emergency Kit</h3>
+        <p>Essential supplies for minor emergencies.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="kit-item">
+        <img src="/DUHACKSS-main/AMK.webp" alt="Advanced Emergency Kit">
+        <h3>Advanced Emergency Kit</h3>
+        <p>Comprehensive supplies for major emergencies.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="kit-item">
+        <img src="/DUHACKSS-main/TMK.webp" alt="Travel Emergency Kit">
+        <h3>Travel Emergency Kit</h3>
+        <p>Portable kit for on-the-go emergencies.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Doctor Section -->
+  <section id="ai-doctor" class="ai-doctor">
+    <h2>AI Doctor</h2>
+    <div class="chatbox">
+      <div id="chatbot-messages"></div>
+      <input type="text" id="chatbot-input" placeholder="Ask the AI doctor...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+<section id="blog" class="blog">
+  <h2>Health Blog</h2>
+  <div class="blog-posts">
+    <!-- Blog Post 1 -->
+    <div class="blog-post">
+      <img src="/DUHACKSS-main/vegpadthai.webp" alt="Healthy Eating Tips">
+      <div class="blog-content">
+        <h3>5 Tips for Healthy Eating</h3>
+        <p class="blog-meta">Posted on October 10, 2023 | By Admin</p>
+        <p>Discover simple yet effective tips to maintain a healthy diet and improve your overall well-being.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <!-- Blog Post 2 -->
+    <div class="blog-post">
+      <img src="/DUHACKSS-main/group-having-a-discussion-l-dt.webp" alt="Mental Health Awareness">
+      <div class="blog-content">
+        <h3>Understanding Mental Health</h3>
+        <p class="blog-meta">Posted on October 5, 2023 | By Admin</p>
+        <p>Learn about the importance of mental health and how to take care of your emotional well-being.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <!-- Blog Post 3 -->
+    <div class="blog-post">
+      <img src="/DUHACKSS-main/10_health_benefits_of_regular_exercise_news_post.webp" alt="Exercise Benefits">
+      <div class="blog-content">
+        <h3>The Benefits of Regular Exercise</h3>
+        <p class="blog-meta">Posted on October 1, 2023 | By Admin</p>
+        <p>Find out how regular exercise can boost your physical and mental health.</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2023 FastMed. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="login.js"></script>
+  <script src="signup.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="medicine-database.js"></script>
+  <script src="cart.js"></script>
+  <script src="order-tracking.js"></script>
+  <script src="blog.js"></script>
+  <script src="dashboard.js"></script>
+  <script src="payment.js"></script>
+  <script src="prescription.js"></script>
+  <script src="reviews.js"></script>
+</body>
+</html>

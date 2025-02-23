@@ -1,0 +1,681 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text for contrast */
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f; /* Dark grey */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 40px;
+  margin-right: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+nav .logo h1 {
+  color: #fff;
+  font-size: 1.8rem; /* Larger font size */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffdd57;
+}
+
+nav ul li button {
+  background-color: #ffdd57;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li button:hover {
+  background-color: #ffc107;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1f1f1f; /* Dark grey */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideUp 0.5s ease-in-out;
+  color: #e0e0e0; /* Light text */
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-size: 1.8rem; /* Larger font size */
+  font-weight: 600; /* Semi-bold */
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ffdd57;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #ffc107;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+  background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-content {
+  background-color: rgba(31, 31, 31, 0.8); /* Dark grey with transparency */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.hero-content h2 {
+  font-size: 3rem; /* Larger font size */
+  margin-bottom: 1rem;
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: slideUp 1s ease-in-out;
+}
+
+.hero-content p {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 1.5rem;
+  font-weight: 400; /* Regular */
+  animation: slideUp 1.2s ease-in-out;
+}
+
+.hero-content button {
+  background-color: #ffdd57;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: 500; /* Medium */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content button:hover {
+  background-color: #ffc107;
+}
+
+/* Services Section */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #1f1f1f; /* Dark grey */
+}
+
+.services h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #333; /* Darker grey */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card i {
+  font-size: 2.5rem; /* Larger icon size */
+  color: #ffdd57; /* Yellow for contrast */
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+  font-weight: 500; /* Medium */
+}
+
+.card p {
+  font-size: 1rem; /* Larger font size */
+  color: #b0b0b0;
+  font-weight: 400; /* Regular */
+}
+
+/* Medicine Ordering Section */
+.medicine-db {
+  padding: 4rem 2rem;
+  background-color: #121212; /* Black */
+  text-align: center;
+}
+
+.medicine-db h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+#search-medicine {
+  width: 80%;
+  max-width: 500px;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  font-size: 1rem; /* Larger font size */
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.medicine-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Medical Supplies Section */
+.medical-supplies {
+  padding: 4rem 2rem;
+  background-color: #1f1f1f; /* Dark grey */
+  text-align: center;
+}
+
+.medical-supplies h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.supplies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.supply-item {
+  background-color: #333; /* Darker grey */
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.supply-item:hover {
+  transform: translateY(-10px);
+}
+
+.supply-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.supply-item h3 {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+  font-weight: 500; /* Medium */
+}
+
+.supply-item p {
+  font-size: 1rem; /* Larger font size */
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+  font-weight: 400; /* Regular */
+}
+
+.supply-item button {
+  background-color: #ffdd57;
+  color: #1f1f1f;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500; /* Medium */
+  font-size: 1rem; /* Larger font size */
+  transition: background-color 0.3s ease;
+}
+
+.supply-item button:hover {
+  background-color: #ffc107;
+}
+
+/* Mental Health Session Section */
+.mental-health {
+  padding: 4rem 2rem;
+  background-color: #121212; /* Black */
+  text-align: center;
+}
+
+.mental-health h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.session-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.session-card {
+  background-color: #1f1f1f; /* Dark grey */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.session-card:hover {
+  transform: translateY(-10px);
+}
+
+.session-card i {
+  font-size: 2.5rem; /* Larger icon size */
+  color: #ffdd57; /* Yellow for contrast */
+  margin-bottom: 1rem;
+}
+
+.session-card h3 {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+  font-weight: 500; /* Medium */
+}
+
+.session-card p {
+  font-size: 1rem; /* Larger font size */
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  font-weight: 400; /* Regular */
+}
+
+.session-card button {
+  background-color: #ffdd57;
+  color: #1f1f1f;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500; /* Medium */
+  font-size: 1rem; /* Larger font size */
+  transition: background-color 0.3s ease;
+}
+
+.session-card button:hover {
+  background-color: #ffc107;
+}
+
+/* Emergency Kit Supply Section */
+.emergency-kit {
+  padding: 4rem 2rem;
+  background-color: #1f1f1f; /* Dark grey */
+  text-align: center;
+}
+
+.emergency-kit h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.kit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.kit-item {
+  background-color: #333; /* Darker grey */
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.kit-item:hover {
+  transform: translateY(-10px);
+}
+
+.kit-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.kit-item h3 {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+  font-weight: 500; /* Medium */
+}
+
+.kit-item p {
+  font-size: 1rem; /* Larger font size */
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+  font-weight: 400; /* Regular */
+}
+
+.kit-item button {
+  background-color: #ffdd57;
+  color: #1f1f1f;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500; /* Medium */
+  font-size: 1rem; /* Larger font size */
+  transition: background-color 0.3s ease;
+}
+
+.kit-item button:hover {
+  background-color: #ffc107;
+}
+
+/* AI Doctor Section */
+.ai-doctor {
+  padding: 4rem 2rem;
+  background-color: #121212; /* Black */
+  text-align: center;
+}
+
+.ai-doctor h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.chatbox {
+  background-color: #1f1f1f; /* Dark grey */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#chatbot-messages {
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 1rem; /* Larger font size */
+}
+
+#chatbot-input {
+  width: 80%;
+  padding: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  margin-right: 1rem;
+  font-size: 1rem; /* Larger font size */
+}
+
+.chatbox button {
+  padding: 0.75rem 1.5rem;
+  background-color: #ffdd57;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500; /* Medium */
+  font-size: 1rem; /* Larger font size */
+  transition: background-color 0.3s ease;
+}
+
+.chatbox button:hover {
+  background-color: #ffc107;
+}
+
+/* Blog Section */
+.blog {
+  padding: 4rem 2rem;
+  background-color: #1f1f1f; /* Dark grey */
+  text-align: center;
+}
+
+.blog h2 {
+  font-size: 2.5rem; /* Larger font size */
+  margin-bottom: 2rem;
+  color: #ffdd57; /* Yellow for contrast */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: 1px; /* Add spacing for elegance */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.blog-post {
+  background-color: #333; /* Darker grey */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.blog-post:hover {
+  transform: translateY(-10px);
+}
+
+.blog-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+  font-weight: 500; /* Medium */
+}
+
+.blog-content .blog-meta {
+  font-size: 0.875rem;
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+}
+
+.blog-content p {
+  font-size: 1rem; /* Larger font size */
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  font-weight: 400; /* Regular */
+}
+
+.blog-content .read-more {
+  display: inline-block;
+  background-color: #ffdd57;
+  color: #1f1f1f;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500; /* Medium */
+  font-size: 1rem; /* Larger font size */
+  transition: background-color 0.3s ease;
+}
+
+.blog-content .read-more:hover {
+  background-color: #ffc107;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}

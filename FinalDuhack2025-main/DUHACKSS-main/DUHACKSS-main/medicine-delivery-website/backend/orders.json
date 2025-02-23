@@ -1,0 +1,4 @@
+[
+    { "id": 1, "userId": 1, "medicines": ["Paracetamol", "Aspirin"], "status": "Delivered" },
+    { "id": 2, "userId": 2, "medicines": ["Ibuprofen"], "status": "Processing" }
+  ]
